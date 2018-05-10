@@ -3,7 +3,7 @@ Feature: Authentication Feature
     Scenario: Test SingUp form and its elements
         Given I am on Appimation home page
         And I press SignUp button
-        Then SignIn form appears
+        Then SignUp form appears
         And I Fill information
         And I Close SingUp form
         Then I don't see SignUp form

@@ -1,5 +1,5 @@
 $LOAD_PATH << File.dirname(__FILE__)
-
+##### JEVGENIJS MURANS ########
 require 'capybara/cucumber'
 require 'capybara-screenshot/cucumber'
 require 'site_prism'
@@ -10,10 +10,10 @@ require 'base64'
 require 'chromedriver/helper'
 
 
-SitePrism.configure do |config|git
-  config.use_implicit_waits = true
-end
-Capybara.app_host = 'http://www.apimation.com/legacy'
+#SitePrism.configure do |config|
+#  config.use_implicit_waits = true
+#end
+Capybara.app_host = 'http://www.apimation.com/'
 Capybara.save_path = 'report/'
 Capybara::Screenshot.autosave_on_failure = false
 Capybara::Screenshot.prune_strategy = :keep_last_run
