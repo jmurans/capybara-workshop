@@ -13,16 +13,16 @@ Then("SignUp form appears") do
   end
 end
 
-Then("I Fill information") do
-  find(:css, '#signup input[type="email"]').send_keys('balabala@v.lv')
-  find(:css, '#signup input[name=password1]').send_keys('yepthisispassword')
-  find(:css, '#signup input[name=password2]').send_keys('yepthisispassword')
-  find(:css, '#signup input[name=project_name]').send_keys('my_project')  
+Then("I Fill {string} and {string} and {string}") do |email, password, projectName|
+  find(:css, '#signup input[type="email"]').send_keys(email)
+  find(:css, '#signup input[name=password1]').send_keys(password)
+  find(:css, '#signup input[name=password2]').send_keys(password)
+  find(:css, '#signup input[name=project_name]').send_keys(projectName)  
   sleep(5)    
 end
 
 Then("I Close SingUp form") do
-  find(:css, '#signup > form > img.closecross').click
+  find(:css, '#signup img.closecross').click
 end
 
 Then("I don't see SignUp form") do
@@ -32,22 +32,30 @@ Then("I don't see SignUp form") do
 end
 
 
-
-
-
-
-When("I press SignIn button") do
-  pending # Write code here that turns the phrase above into concrete actions
+When("I press top Login button") do
+  find(:css, '#login-b').click 
 end
 
-Then("I enter invalid email and password") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("Login form appears") do
+  unless find(:css, '#login').visible?
+    raise 'Signup form is not visible'
+  end
 end
 
-Then("I press Login button") do
-  pending # Write code here that turns the phrase above into concrete actions
+Then("I enter invalid email {string} and invalid password {string}") do |email, password|
+  find(:css, '#login input[name="login"]').send_keys(email)
+  find(:css, '#login input[type=password]').send_keys(password)
+end
+
+Then("I press Login button in Login form") do
+  find(:xpath, '//*[@id="login"]/form/button').click
+  sleep(5)
 end
 
 Then("I see error message") do
-  pending # Write code here that turns the phrase above into concrete actions
+  if find(:css, '#login form div.alert.alert-danger')
+      expect(page).to have_content "Username or password is not correct"
+    else 
+      raise 'Expected error is not present'
+  end      
 end

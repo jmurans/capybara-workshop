@@ -4,15 +4,15 @@ Feature: Authentication Feature
         Given I am on Appimation home page
         And I press SignUp button
         Then SignUp form appears
-        And I Fill information
+        And I Fill "mycool@email.com" and "mycoolpass" and "myProject"
         And I Close SingUp form
         Then I don't see SignUp form
 
-    Scenario: Test SignIn error message with invalid email and password
+    Scenario: Test Login error message with invalid email and password
         Given I am on Appimation home page
-        And I press SignIn button
-        Then SignIn form appears
-        And I enter invalid email and password
-        And I press Login button
+        And I press top Login button 
+        Then Login form appears
+        And I enter invalid email "bob@jones.com" and invalid password "wrongPassword"
+        And I press Login button in Login form
         Then I see error message
        
