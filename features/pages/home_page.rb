@@ -25,6 +25,8 @@ class HomePage < BasePage
     @button_close_signup.click
   end
 
+
+  #TODO: Refector this visible invisible shitcode
   def signUpIsVisible
     @form_signup.isVisible
     @button_close_signup.isVisible
@@ -34,6 +36,7 @@ class HomePage < BasePage
     @input_signup_project.isVisible
   end
 
+  #TODO: Refector this visible invisible shitcode
   def signUpIsNotVisible
     !@form_signup
     !@button_close_signup
@@ -43,10 +46,10 @@ class HomePage < BasePage
     !@input_signup_project
   end
 
-  def fillSignUpFormWithCorrectData(email, password, projectName)
+  def fillSignUpFormWithIncorrectData(email, password, incPassword, projectName)
     @input_signup_email.send_keys email
     @input_signup_password.send_keys password
-    @input_signup_project.send_keys password
+    @input_signup_rep_password.send_keys incPassword
     @input_signup_project.send_keys projectName
   end
 

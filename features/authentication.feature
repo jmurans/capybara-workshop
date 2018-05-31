@@ -4,7 +4,7 @@ Feature: Authentication Feature
         Given I am on Appimation home page
         And I press SignUp button
         Then SignUp form appears
-        And I Fill "mycool@email.com" and "mycoolpass" and "myProject"
+        And I Fill SignUp data
         And I Close SingUp form
         Then I don't see SignUp form
 
@@ -12,7 +12,7 @@ Feature: Authentication Feature
         Given I am on Appimation home page
         And I press top Login button 
         Then Login form appears
-        And I enter invalid email "bob@jones.com" and invalid password "wrongPassword"
+        And I enter invalid email credentials
         And I press Login button in Login form
         Then I see error message
        
