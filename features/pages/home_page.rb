@@ -46,6 +46,8 @@ class HomePage < BasePage
     !@input_signup_project
   end
 
+
+#TODO: refactor naming without focus on bvalid/invalid data
   def fillSignUpFormWithIncorrectData(email, password, incPassword, projectName)
     @input_signup_email.send_keys email
     @input_signup_password.send_keys password
@@ -79,6 +81,7 @@ class HomePage < BasePage
       @button_login_form_login.click
   end
 
+  #TODO: missusage, actually no validation is performed need to refactor
   def verifyLoginAlert
     @alert_login
   end
