@@ -11,13 +11,13 @@ module Users
     end
     
     class User
-        attr_reader :email, :password, :incPassword, :projectName
+        attr_reader :email, :password, :repPasswordDiff, :projectName
         def initialize(args = {})
-            defaults = {email: DateTime.now.strftime('%Q')+'@test.com', password: DateTime.now.strftime('%Q'), incPassword: DateTime.now.strftime('%Q') , projectName: DateTime.now}
+            defaults = {email: DateTime.now.strftime('%Q')+'@test.com', password: DateTime.now.strftime('%Q'), repPasswordDiff: DateTime.now.strftime('%Q') , projectName: DateTime.now}
             args = defaults.merge(args)
             @email = args[:email]
             @password = args[:password]
-            @incPassword = args[:incPassword]
+            @repPasswordDiff = args[:repPasswordDiff]
             @projectName = args[:projectName]
         end
     end

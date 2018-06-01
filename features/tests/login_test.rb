@@ -21,7 +21,7 @@ class LoginTest
 
 	def fillSignUpForm
 		user = Users.user_with_invalid_credentials
-		@pages.page_home.fillSignUpForm(user.email, user.password, user.incPassword, user.projectName) 
+		@pages.page_home.fillSignUpForm(user.email, user.password, user.repPasswordDiff, user.projectName) 
 	end
 
 	def close_signup

@@ -4,7 +4,7 @@ Feature: Authentication Feature
         Given I am on Appimation home page
         And I press SignUp button
         Then SignUp form appears
-        And I Fill SignUp data
+        And I Fill SignUp form with incorrect data
         And I Close SingUp form
         Then I don't see SignUp form
 

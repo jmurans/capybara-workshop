@@ -51,10 +51,10 @@ class HomePage < BasePage
 
 
 
-  def fillSignUpForm(email, password, incPassword, projectName)
+  def fillSignUpForm(email, password, repPasswordDiff, projectName)
     @input_signup_email.send_keys email
     @input_signup_password.send_keys password
-    @input_signup_rep_password.send_keys incPassword
+    @input_signup_rep_password.send_keys repPasswordDiff
     @input_signup_project.send_keys projectName
   end
 
