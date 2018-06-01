@@ -19,9 +19,9 @@ class LoginTest
 		@pages.page_home.signUpIsVisible
 	end
 
-	def fill_incorrect_signup_data
+	def fillSignUpForm
 		user = Users.user_with_invalid_credentials
-		@pages.page_home.fillSignUpFormWithIncorrectData(user.email, user.password, user.incPassword, user.projectName) 
+		@pages.page_home.fillSignUpForm(user.email, user.password, user.incPassword, user.projectName) 
 	end
 
 	def close_signup

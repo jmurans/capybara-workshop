@@ -11,8 +11,8 @@ Then("SignUp form appears") do
   @tests.login_tests.verify_signup_form
 end
 
-Then("I Fill SignUp data") do
-  @tests.login_tests.fill_incorrect_signup_data
+Then("I Fill SignUp form with incorrect data") do
+  @tests.login_tests.fillSignUpForm
   sleep(5)    
 end
 

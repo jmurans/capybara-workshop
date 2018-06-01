@@ -26,7 +26,7 @@ class HomePage < BasePage
   end
 
 
-  #TODO: Refector this visible invisible shitcode
+ 
   def signUpIsVisible
     @form_signup.isVisible
     @button_close_signup.isVisible
@@ -36,19 +36,22 @@ class HomePage < BasePage
     @input_signup_project.isVisible
   end
 
-  #TODO: Refector this visible invisible shitcode
+ 
   def signUpIsNotVisible
-    !@form_signup
-    !@button_close_signup
-    !@input_signup_email
-    !@input_signup_password
-    !@input_signup_rep_password
-    !@input_signup_project
+
+    @form_signup.isNotVisible
+    @button_close_signup.isNotVisible
+    @input_signup_email.isNotVisible
+    @input_signup_password.isNotVisible
+    @input_signup_rep_password.isNotVisible
+    @input_signup_project.isNotVisible
+
+
   end
 
 
-#TODO: refactor naming without focus on bvalid/invalid data
-  def fillSignUpFormWithIncorrectData(email, password, incPassword, projectName)
+
+  def fillSignUpForm(email, password, incPassword, projectName)
     @input_signup_email.send_keys email
     @input_signup_password.send_keys password
     @input_signup_rep_password.send_keys incPassword
@@ -81,9 +84,9 @@ class HomePage < BasePage
       @button_login_form_login.click
   end
 
-  #TODO: missusage, actually no validation is performed need to refactor
+
   def verifyLoginAlert
-    @alert_login
+    @alert_login.isVisible
   end
 
   def load

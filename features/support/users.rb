@@ -6,7 +6,7 @@ module Users
     end
 
     def Users.valid_user
-        @valid_user ||= User.valid_user
+        @valid_user ||= User.new(args = {email: 'eugene.muran@testdevlab.com', password: 'myCoolPassword'})
         @valid_user
     end
     
