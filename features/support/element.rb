@@ -12,7 +12,7 @@ class Element
     end
 
     def isNotVisible
-        unless !visible?
+        if visible?
             raise "Element is visible, but it shouldn\'t"
         end
     end
